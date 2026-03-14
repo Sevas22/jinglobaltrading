@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Patr�n de puntos tipo estrellas - comercio global (denso) -->
+    <pattern id="stars" x="0" y="0" width="800" height="600" patternUnits="userSpaceOnUse">
+      <!-- Capa fina: polvo de estrellas - muchos puntos peque�os -->
+      <circle cx="50" cy="50" r="0.6" fill="rgba(255,255,255,0.58)" />
+      <circle cx="150" cy="80" r="0.5" fill="rgba(255,255,255,0.62)" />
+      <circle cx="250" cy="120" r="0.6" fill="rgba(255,255,255,0.7)" />
+      <circle cx="350" cy="60" r="0.5" fill="rgba(255,255,255,0.76)" />
+      <circle cx="450" cy="100" r="0.6" fill="rgba(255,255,255,0.58)" />
+      <circle cx="550" cy="140" r="0.5" fill="rgba(255,255,255,0.62)" />
+      <circle cx="650" cy="70" r="0.6" fill="rgba(255,255,255,0.74)" />
+      <circle cx="750" cy="110" r="0.5" fill="rgba(255,255,255,0.36)" />
+      <circle cx="100" cy="200" r="0.6" fill="rgba(255,255,255,0.76)" />
+      <circle cx="200" cy="240" r="0.5" fill="rgba(255,255,255,0.58)" />
+      <circle cx="300" cy="180" r="0.6" fill="rgba(255,255,255,0.62)" />
+      <circle cx="400" cy="220" r="0.5" fill="rgba(255,255,255,0.74)" />
+      <circle cx="500" cy="260" r="0.6" fill="rgba(255,255,255,0.37)" />
+      <circle cx="600" cy="200" r="0.5" fill="rgba(255,255,255,0.39)" />
+      <circle cx="700" cy="240" r="0.6" fill="rgba(255,255,255,0.34)" />
+      <circle cx="30" cy="350" r="0.5" fill="rgba(255,255,255,0.36)" />
+      <circle cx="130" cy="390" r="0.6" fill="rgba(255,255,255,0.76)" />
+      <circle cx="230" cy="330" r="0.5" fill="rgba(255,255,255,0.58)" />
+      <circle cx="330" cy="370" r="0.6" fill="rgba(255,255,255,0.62)" />
+      <circle cx="430" cy="410" r="0.5" fill="rgba(255,255,255,0.74)" />
+      <circle cx="530" cy="350" r="0.6" fill="rgba(255,255,255,0.37)" />
+      <circle cx="630" cy="390" r="0.5" fill="rgba(255,255,255,0.58)" />
+      <circle cx="730" cy="430" r="0.6" fill="rgba(255,255,255,0.76)" />
+      <circle cx="80" cy="500" r="0.5" fill="rgba(255,255,255,0.34)" />
+      <circle cx="180" cy="540" r="0.6" fill="rgba(255,255,255,0.36)" />
+      <circle cx="280" cy="480" r="0.5" fill="rgba(255,255,255,0.39)" />
+      <circle cx="380" cy="520" r="0.6" fill="rgba(255,255,255,0.58)" />
+      <circle cx="480" cy="560" r="0.5" fill="rgba(255,255,255,0.37)" />
+      <circle cx="580" cy="500" r="0.6" fill="rgba(255,255,255,0.62)" />
+      <circle cx="680" cy="540" r="0.5" fill="rgba(255,255,255,0.74)" />
+      <circle cx="55" cy="155" r="0.5" fill="rgba(255,255,255,0.36)" />
+      <circle cx="155" cy="95" r="0.6" fill="rgba(255,255,255,0.76)" />
+      <circle cx="255" cy="275" r="0.5" fill="rgba(255,255,255,0.58)" />
+      <circle cx="355" cy="315" r="0.6" fill="rgba(255,255,255,0.39)" />
+      <circle cx="455" cy="355" r="0.5" fill="rgba(255,255,255,0.37)" />
+      <circle cx="555" cy="295" r="0.6" fill="rgba(255,255,255,0.34)" />
+      <circle cx="655" cy="335" r="0.5" fill="rgba(255,255,255,0.62)" />
+      <circle cx="75" cy="275" r="0.6" fill="rgba(255,255,255,0.74)" />
+      <circle cx="175" cy="415" r="0.5" fill="rgba(255,255,255,0.76)" />
+      <circle cx="275" cy="455" r="0.6" fill="rgba(255,255,255,0.58)" />
+      <circle cx="375" cy="395" r="0.5" fill="rgba(255,255,255,0.36)" />
+      <circle cx="475" cy="435" r="0.6" fill="rgba(255,255,255,0.39)" />
+      <circle cx="575" cy="375" r="0.5" fill="rgba(255,255,255,0.37)" />
+      <circle cx="675" cy="415" r="0.6" fill="rgba(255,255,255,0.34)" />
+      <!-- Puntos principales - variaci�n de opacidad y tama�o -->
+      <circle cx="12" cy="23" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="87" cy="156" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="234" cy="41" r="1.5" fill="rgba(255,255,255,0.78)" />
+      <circle cx="156" cy="289" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="401" cy="112" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="523" cy="267" r="1.6" fill="rgba(255,255,255,0.66)" />
+      <circle cx="678" cy="89" r="1.5" fill="rgba(255,255,255,0.74)" />
+      <circle cx="45" cy="412" r="1.3" fill="rgba(255,255,255,0.58)" />
+      <circle cx="312" cy="378" r="1.5" fill="rgba(255,255,255,0.66)" />
+      <circle cx="567" cy="445" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="189" cy="134" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="445" cy="334" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="723" cy="312" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="98" cy="67" r="1.5" fill="rgba(255,255,255,0.63)" />
+      <circle cx="267" cy="201" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="534" cy="178" r="1.5" fill="rgba(255,255,255,0.68)" />
+      <circle cx="34" cy="289" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="378" cy="456" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="612" cy="23" r="1.5" fill="rgba(255,255,255,0.66)" />
+      <circle cx="145" cy="423" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="289" cy="89" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="456" cy="267" r="1.5" fill="rgba(255,255,255,0.63)" />
+      <circle cx="701" cy="445" r="1.2" fill="rgba(255,255,255,0.58)" />
+      <circle cx="23" cy="178" r="1.3" fill="rgba(255,255,255,0.76)" />
+      <circle cx="412" cy="23" r="1.5" fill="rgba(255,255,255,0.72)" />
+      <circle cx="534" cy="389" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="178" cy="312" r="1.5" fill="rgba(255,255,255,0.78)" />
+      <circle cx="345" cy="156" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="623" cy="234" r="1.3" fill="rgba(255,255,255,0.58)" />
+      <circle cx="67" cy="445" r="1.5" fill="rgba(255,255,255,0.68)" />
+      <circle cx="289" cy="267" r="1.5" fill="rgba(255,255,255,0.25)" />
+      <circle cx="478" cy="89" r="1.5" fill="rgba(255,255,255,0.66)" />
+      <circle cx="712" cy="178" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="112" cy="134" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="356" cy="423" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="589" cy="312" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="234" cy="356" r="1.5" fill="rgba(255,255,255,0.63)" />
+      <circle cx="445" cy="201" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="678" cy="534" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="45" cy="534" r="1.5" fill="rgba(255,255,255,0.68)" />
+      <circle cx="312" cy="67" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="567" cy="156" r="1.5" fill="rgba(255,255,255,0.66)" />
+      <circle cx="123" cy="267" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="389" cy="378" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="634" cy="67" r="1.5" fill="rgba(255,255,255,0.72)" />
+      <circle cx="201" cy="445" r="1.5" fill="rgba(255,255,255,0.63)" />
+      <circle cx="423" cy="134" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="556" cy="534" r="1.2" fill="rgba(255,255,255,0.58)" />
+      <circle cx="78" cy="201" r="1.3" fill="rgba(255,255,255,0.62)" />
+      <circle cx="267" cy="423" r="1.5" fill="rgba(255,255,255,0.68)" />
+      <circle cx="501" cy="312" r="1.5" fill="rgba(255,255,255,0.78)" />
+      <circle cx="734" cy="234" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="156" cy="67" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="334" cy="289" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="589" cy="89" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="23" cy="356" r="1.5" fill="rgba(255,255,255,0.66)" />
+      <circle cx="412" cy="445" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="645" cy="378" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="189" cy="201" r="1.3" fill="rgba(255,255,255,0.58)" />
+      <circle cx="378" cy="112" r="1.5" fill="rgba(255,255,255,0.72)" />
+      <circle cx="534" cy="423" r="1.5" fill="rgba(255,255,255,0.63)" />
+      <circle cx="712" cy="534" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="67" cy="134" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="289" cy="334" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="478" cy="178" r="1.5" fill="rgba(255,255,255,0.68)" />
+      <circle cx="623" cy="445" r="1.5" fill="rgba(255,255,255,0.66)" />
+      <circle cx="112" cy="312" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="356" cy="67" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="567" cy="267" r="1.3" fill="rgba(255,255,255,0.58)" />
+      <circle cx="701" cy="156" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="34" cy="423" r="1.5" fill="rgba(255,255,255,0.63)" />
+      <circle cx="234" cy="178" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="445" cy="378" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="678" cy="267" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="98" cy="534" r="1.5" fill="rgba(255,255,255,0.68)" />
+      <circle cx="312" cy="201" r="1.5" fill="rgba(255,255,255,0.78)" />
+      <circle cx="534" cy="67" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="723" cy="378" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="145" cy="89" r="1.3" fill="rgba(255,255,255,0.58)" />
+      <circle cx="378" cy="289" r="1.5" fill="rgba(255,255,255,0.72)" />
+      <circle cx="589" cy="423" r="1.5" fill="rgba(255,255,255,0.63)" />
+      <circle cx="45" cy="267" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="267" cy="445" r="1.2" fill="rgba(255,255,255,0.76)" />
+      <circle cx="456" cy="112" r="1.3" fill="rgba(255,255,255,0.74)" />
+      <circle cx="634" cy="312" r="1.5" fill="rgba(255,255,255,0.7)" />
+      <circle cx="178" cy="356" r="1.5" fill="rgba(255,255,255,0.66)" />
+      <circle cx="401" cy="534" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="556" cy="201" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="712" cy="89" r="1.3" fill="rgba(255,255,255,0.58)" />
+      <!-- M�s estrellas adicionales para mayor densidad -->
+      <circle cx="105" cy="45" r="1.2" fill="rgba(255,255,255,0.65)" />
+      <circle cx="205" cy="95" r="1.4" fill="rgba(255,255,255,0.6)" />
+      <circle cx="305" cy="145" r="1.1" fill="rgba(255,255,255,0.68)" />
+      <circle cx="405" cy="195" r="1.3" fill="rgba(255,255,255,0.62)" />
+      <circle cx="505" cy="245" r="1.2" fill="rgba(255,255,255,0.66)" />
+      <circle cx="605" cy="295" r="1.4" fill="rgba(255,255,255,0.64)" />
+      <circle cx="705" cy="345" r="1.1" fill="rgba(255,255,255,0.7)" />
+      <circle cx="25" cy="125" r="1.3" fill="rgba(255,255,255,0.6)" />
+      <circle cx="125" cy="175" r="1.2" fill="rgba(255,255,255,0.66)" />
+      <circle cx="225" cy="225" r="1.4" fill="rgba(255,255,255,0.62)" />
+      <circle cx="325" cy="275" r="1.1" fill="rgba(255,255,255,0.68)" />
+      <circle cx="425" cy="325" r="1.3" fill="rgba(255,255,255,0.64)" />
+      <circle cx="525" cy="375" r="1.2" fill="rgba(255,255,255,0.7)" />
+      <circle cx="625" cy="425" r="1.4" fill="rgba(255,255,255,0.6)" />
+      <circle cx="725" cy="475" r="1.1" fill="rgba(255,255,255,0.66)" />
+      <circle cx="65" cy="305" r="1.2" fill="rgba(255,255,255,0.68)" />
+      <circle cx="165" cy="355" r="1.4" fill="rgba(255,255,255,0.62)" />
+      <circle cx="265" cy="405" r="1.1" fill="rgba(255,255,255,0.66)" />
+      <circle cx="365" cy="455" r="1.3" fill="rgba(255,255,255,0.64)" />
+      <circle cx="465" cy="505" r="1.2" fill="rgba(255,255,255,0.7)" />
+      <circle cx="565" cy="555" r="1.4" fill="rgba(255,255,255,0.6)" />
+      <circle cx="665" cy="105" r="1.1" fill="rgba(255,255,255,0.68)" />
+      <circle cx="15" cy="455" r="1.3" fill="rgba(255,255,255,0.62)" />
+      <circle cx="115" cy="505" r="1.2" fill="rgba(255,255,255,0.66)" />
+      <circle cx="215" cy="555" r="1.4" fill="rgba(255,255,255,0.64)" />
+      <circle cx="315" cy="105" r="1.1" fill="rgba(255,255,255,0.7)" />
+      <circle cx="415" cy="155" r="1.3" fill="rgba(255,255,255,0.6)" />
+      <circle cx="515" cy="205" r="1.2" fill="rgba(255,255,255,0.68)" />
+      <circle cx="615" cy="255" r="1.4" fill="rgba(255,255,255,0.62)" />
+      <circle cx="715" cy="305" r="1.1" fill="rgba(255,255,255,0.66)" />
+      <circle cx="35" cy="75" r="1.2" fill="rgba(255,255,255,0.64)" />
+      <circle cx="135" cy="255" r="1.4" fill="rgba(255,255,255,0.7)" />
+      <circle cx="235" cy="315" r="1.1" fill="rgba(255,255,255,0.6)" />
+      <circle cx="335" cy="365" r="1.3" fill="rgba(255,255,255,0.68)" />
+      <circle cx="435" cy="415" r="1.2" fill="rgba(255,255,255,0.62)" />
+      <circle cx="535" cy="465" r="1.4" fill="rgba(255,255,255,0.66)" />
+      <circle cx="635" cy="515" r="1.1" fill="rgba(255,255,255,0.64)" />
+      <circle cx="735" cy="565" r="1.3" fill="rgba(255,255,255,0.7)" />
+    </pattern>
+    <!-- L�neas sutiles de conexi�n - rutas comerciales globales -->
+    <pattern id="routes" x="0" y="0" width="800" height="600" patternUnits="userSpaceOnUse">
+      <path d="M 87 156 Q 200 100 312 89" stroke="rgba(255,255,255,0.08)" stroke-width="0.4" fill="none" />
+      <path d="M 234 41 Q 350 80 456 112" stroke="rgba(255,255,255,0.07)" stroke-width="0.35" fill="none" />
+      <path d="M 156 289 Q 280 250 378 289" stroke="rgba(255,255,255,0.06)" stroke-width="0.3" fill="none" />
+      <path d="M 401 112 Q 480 200 534 267" stroke="rgba(255,255,255,0.08)" stroke-width="0.35" fill="none" />
+      <path d="M 45 412 Q 180 380 312 378" stroke="rgba(255,255,255,0.07)" stroke-width="0.35" fill="none" />
+      <path d="M 523 267 Q 600 320 678 312" stroke="rgba(255,255,255,0.06)" stroke-width="0.3" fill="none" />
+      <path d="M 12 23 Q 120 150 234 201" stroke="rgba(255,255,255,0.05)" stroke-width="0.25" fill="none" />
+      <path d="M 567 445 Q 650 400 723 312" stroke="rgba(255,255,255,0.07)" stroke-width="0.35" fill="none" />
+      <path d="M 289 89 Q 350 200 345 334" stroke="rgba(255,255,255,0.06)" stroke-width="0.3" fill="none" />
+      <path d="M 534 178 Q 600 250 623 234" stroke="rgba(255,255,255,0.08)" stroke-width="0.35" fill="none" />
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#stars)" />
+  <rect width="800" height="600" fill="url(#routes)" />
+</svg>

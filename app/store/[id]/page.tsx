@@ -40,7 +40,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
 
   return (
     <div className="bg-background pt-24 pb-16">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
         {/* Back button */}
         <Button asChild variant="ghost" className="mb-6 text-muted-foreground hover:text-foreground">
           <Link href="/store">
@@ -144,10 +144,10 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
             <Button
               asChild
               size="lg"
-              className="mt-auto bg-gold text-white hover:bg-gold/90"
+              className="mt-auto flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-white shadow-lg hover:bg-gold/90"
             >
-              <Link href={`/request?product=${encodeURIComponent(product.name)}&qty=${quantity}`}>
-                <ShoppingBag className="mr-2 h-5 w-5" />
+              <Link href={`/request?product=${encodeURIComponent(product.name)}&qty=${quantity}`} className="flex items-center gap-2">
+                <ShoppingBag className="h-5 w-5" />
                 {t.storePage.contactToOrder}
               </Link>
             </Button>

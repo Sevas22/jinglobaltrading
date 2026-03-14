@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <!-- Patr�n sutil y profesional - puntos discretos -->
+    <pattern id="dots" x="0" y="0" width="600" height="400" patternUnits="userSpaceOnUse">
+      <!-- Distribuci�n equilibrada - opacidad baja (0.06-0.18) para elegancia -->
+      <circle cx="24" cy="32" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="96" cy="88" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="168" cy="144" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="240" cy="56" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="312" cy="112" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="384" cy="168" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="456" cy="224" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="528" cy="40" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="48" cy="176" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="120" cy="232" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="192" cy="288" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="264" cy="344" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="336" cy="24" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="408" cy="80" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="480" cy="136" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="552" cy="192" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="72" cy="248" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="144" cy="304" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="216" cy="360" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="288" cy="200" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="360" cy="256" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="432" cy="312" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="504" cy="368" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="576" cy="280" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="60" cy="120" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="132" cy="16" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="204" cy="72" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="276" cy="128" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="348" cy="184" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="420" cy="240" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="492" cy="296" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="564" cy="352" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="36" cy="264" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="108" cy="320" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="180" cy="376" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="252" cy="8" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="324" cy="64" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="396" cy="120" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="468" cy="176" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="540" cy="232" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="12" cy="384" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="84" cy="48" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="156" cy="104" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="228" cy="160" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="300" cy="216" r="0.5" fill="rgba(255,255,255,0.15)" />
+      <circle cx="372" cy="272" r="0.5" fill="rgba(255,255,255,0.16)" />
+      <circle cx="444" cy="328" r="0.5" fill="rgba(255,255,255,0.14)" />
+      <circle cx="516" cy="384" r="0.5" fill="rgba(255,255,255,0.12)" />
+      <circle cx="588" cy="136" r="0.5" fill="rgba(255,255,255,0.16)" />
+    </pattern>
+  </defs>
+  <rect width="600" height="400" fill="url(#dots)" />
+</svg>

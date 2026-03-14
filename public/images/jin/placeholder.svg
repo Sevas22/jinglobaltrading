@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10131c"/>
+      <stop offset="50%" style="stop-color:#1a1f2e"/>
+      <stop offset="100%" style="stop-color:#2a1f22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b21f2a;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#d4a447;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#accent)"/>
+  <text x="400" y="300" font-family="system-ui,sans-serif" font-size="24" font-weight="600" fill="#d4a447" text-anchor="middle" opacity="0.9">JIN Global Trading</text>
+  <text x="400" y="330" font-family="system-ui,sans-serif" font-size="14" fill="#b9ab8b" text-anchor="middle" opacity="0.7">Comercio internacional</text>
+</svg>

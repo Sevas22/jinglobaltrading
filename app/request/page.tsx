@@ -117,15 +117,16 @@ function RequestPageContent() {
       <HeroBanner
         title={t.requestPage.title}
         subtitle={t.requestPage.subtitle}
-        image="/brand/hero-skyline.svg"
+        image="/images/jin/jin-hero-wide.png"
+        overlayVariant="store"
       />
 
-      <section className="bg-background py-16">
-        <div className="mx-auto max-w-3xl px-4 lg:px-8">
-          <Card className="rounded-[28px] border border-border/70 bg-card/95 shadow-xl">
+<section className="bg-[#05070c] py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-3xl px-4 sm:px-5 lg:px-8">
+          <Card className="rounded-2xl border border-white/10 bg-[#0c0f18] shadow-2xl">
             <CardHeader className="pb-2">
-              <div className="mb-3 inline-flex w-fit rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
-                Business inquiry
+              <div className="mb-3 inline-flex w-fit rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-gold">
+                Solicitud de información
               </div>
               <CardTitle className="text-2xl text-foreground">{t.requestPage.title}</CardTitle>
               <CardDescription className="text-muted-foreground">
@@ -277,13 +278,13 @@ function RequestPageContent() {
                   type="submit"
                   size="lg"
                   disabled={sending}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="rounded-xl bg-gold px-6 py-3 font-semibold text-navy shadow-lg hover:bg-gold/90"
                 >
                   {sending ? (
                     <>{t.requestPage.sending}</>
                   ) : (
                     <>
-                      <Send className="mr-2 h-4 w-4" />
+                      <Send className="h-4 w-4" />
                       {t.requestPage.submit}
                     </>
                   )}

@@ -1,63 +1,118 @@
-import { siteConfig } from "@/lib/site-config"
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { useTheme } from "@/contexts/theme-context"
+
+/** Icono circular del logo (disco dorado + JIN) para favicon, PWA, menús compactos */
+export function LogoIcon({ className = "h-10 w-10", asLink = false }: { className?: string; asLink?: boolean }) {
+  const icon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      aria-label="JIN Global Trading"
+      className={className}
+    >
+      <defs>
+        <linearGradient id="logo-icon-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#d4a447" />
+          <stop offset="50%" stopColor="#b8860b" />
+          <stop offset="100%" stopColor="#927A3C" />
+        </linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="32" fill="url(#logo-icon-gold)" />
+      <text x="32" y="42" fontFamily="system-ui, -apple-system, Arial, sans-serif" fontSize="24" fontWeight="800" fill="#b21f2a" textAnchor="middle" letterSpacing="1">JIN</text>
+    </svg>
+  )
+  return asLink ? <Link href="/">{icon}</Link> : icon
+}
 
 interface LogoProps {
   showWordmark?: boolean
   inverted?: boolean
+  /** Texto claro sobre fondo oscuro (ej. navbar sobre hero) */
+  lightText?: boolean
+  /** Imagen del logo para light mode. Si no existe, usa SVG. */
+  logoSrc?: string
+  /** Imagen del logo para dark mode. Si no se usa, se aplica filtro a logoSrc. */
+  logoDarkSrc?: string
 }
 
-export function Logo({ showWordmark = true, inverted = false }: LogoProps) {
-  const wordmarkColor = inverted ? "#FFFFFF" : "#123F49"
-  const emerald = inverted ? "#3FC1A7" : "#0F8A5F"
-  const navy = inverted ? "#D9EEF1" : "#123F66"
-  const gold = inverted ? "#E7D2A1" : "#B9964A"
-  const sand = inverted ? "#EFE5CE" : "#D9CDB2"
+export function Logo({ showWordmark = true, inverted = false, lightText = false, logoSrc = "/brand/jin-logo.png", logoDarkSrc }: LogoProps) {
+  const { theme } = useTheme()
+  const isDark = theme === "dark"
+  const [imgError, setImgError] = useState(false)
+  const useImage = logoSrc && !imgError
+
+  // En dark: usar versión específica o la misma con ajustes
+  const logoSrcResolved = useImage && isDark && logoDarkSrc ? logoDarkSrc : logoSrc
+
+  // Colores según contexto: hero (overlay) vs navbar normal
+  const useHeroColors = inverted
+  const jinColor = useHeroColors ? "var(--hero-text)" : "var(--foreground)"
+  const globalColor = useHeroColors ? "var(--gold)" : "var(--logo-global)"
+
+  // Logo con fondo transparente: no aplicar invert, mantiene colores dorado/rojo en cualquier fondo
+  const applyInvert = false // Nuevo logo PNG transparente con colores propios
 
   return (
     <div className="flex items-center gap-3">
-      <svg viewBox="0 0 760 150" aria-hidden="true" className="h-11 w-auto shrink-0" role="img">
-        <g transform="translate(10 18)">
-          <path
-            d="M18 22H102V38H76V102C76 116 65 128 48 128C35 128 23 122 12 110L24 97C31 105 39 109 46 109C56 109 61 103 61 94V38H18V22Z"
-            fill={navy}
+      <div
+        className={`relative shrink-0 ${
+          useImage
+            ? "h-10 w-auto max-w-[200px] overflow-hidden rounded-xl md:h-12 md:max-w-[240px]"
+            : "h-12 min-w-[160px] md:h-14 md:min-w-[200px]"
+        }`}
+      >
+        {useImage ? (
+          <Image
+            src={logoSrcResolved}
+            alt="JIN Global Trading"
+            width={240}
+            height={64}
+            className={`h-full w-auto object-contain object-left transition-all duration-300 rounded-xl ${
+              applyInvert && isDark && !logoDarkSrc ? "brightness-0 invert" : ""
+            }`}
+            priority
+            unoptimized
+            onError={() => setImgError(true)}
           />
-          <path
-            d="M95 22H177V38H150V126H133V38H95V22Z"
-            fill={emerald}
-          />
-          <path
-            d="M126 126H109V80C109 50 125 30 159 22L163 36C139 43 126 57 126 80V126Z"
-            fill={emerald}
-          />
-          <path
-            d="M79 18L87 30H101L91 38L95 51L79 43L63 51L67 38L57 30H71L79 18Z"
-            fill="none"
-            stroke={gold}
-            strokeWidth="4"
-            strokeLinejoin="round"
-          />
-        </g>
-
-        {showWordmark ? (
-          <g transform="translate(225 24)">
-            <text
-              x="0"
-              y="52"
-              fill={wordmarkColor}
-              fontFamily="Arial, Helvetica, sans-serif"
-              fontSize="44"
-              fontWeight="800"
-              letterSpacing="1"
-            >
-              {siteConfig.name.toUpperCase()}
-            </text>
-            <path d="M0 88c88 7 171 5 257 0 77-4 151-4 229 0" stroke={emerald} strokeWidth="6" fill="none" strokeLinecap="round" />
-            <path d="M0 98c96 7 185 5 275 0 76-4 148-4 223 0" stroke={navy} strokeWidth="5" fill="none" strokeLinecap="round" />
-            <path d="M0 108c104 7 196 5 287 0 74-4 144-4 215 0" stroke={gold} strokeWidth="4" fill="none" strokeLinecap="round" />
-            <path d="M0 118c112 7 206 5 298 0 72-4 139-4 207 0" stroke={sand} strokeWidth="3" fill="none" strokeLinecap="round" />
-          </g>
-        ) : null}
-      </svg>
-
+        ) : (
+          <svg
+            viewBox="0 0 200 52"
+            aria-hidden="true"
+            className="h-10 w-auto shrink-0"
+            role="img"
+          >
+        {/* J - rojo */}
+        <text x="0" y="36" fill="var(--primary)" fontFamily="system-ui, Arial, sans-serif" fontSize="30" fontWeight="800" letterSpacing="0.5">
+          J
+        </text>
+        {/* I - dorado */}
+        <text x="32" y="36" fill="var(--gold)" fontFamily="system-ui, Arial, sans-serif" fontSize="30" fontWeight="800" letterSpacing="0.5">
+          I
+        </text>
+        {/* N - rojo */}
+        <text x="52" y="36" fill="var(--primary)" fontFamily="system-ui, Arial, sans-serif" fontSize="30" fontWeight="800" letterSpacing="0.5">
+          N
+        </text>
+        {/* GLOBAL TRADING - se adapta al tema */}
+        <text x="0" y="50" fill={globalColor} fontFamily="system-ui, Arial, sans-serif" fontSize="10" fontWeight="600" letterSpacing="0.2em">
+          GLOBAL TRADING
+        </text>
+          </svg>
+        )}
+      </div>
+      {showWordmark ? (
+        <span
+          className={`hidden text-[10px] font-semibold uppercase tracking-[0.2em] md:inline ${
+            lightText ? "text-white/95" : useHeroColors ? "text-hero-text/90" : "text-muted-foreground"
+          }`}
+        >
+          Red global de logística
+        </span>
+      ) : null}
     </div>
   )
 }

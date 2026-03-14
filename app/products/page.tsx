@@ -41,11 +41,11 @@ export default function ProductsPage() {
       <HeroBanner
         title={t.productsPage.title}
         subtitle={t.productsPage.subtitle}
-        image="/brand/hero-port.svg"
+        image="/images/jin/jin-trade-insight-hero.jpg"
       />
 
       <section className="bg-background py-16">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
           <div className="mb-10 rounded-[28px] border border-border/70 bg-card/85 p-5 shadow-sm backdrop-blur md:p-6">
             <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
@@ -128,9 +128,9 @@ export default function ProductsPage() {
                     {product.description}
                   </p>
                   <div className="mt-auto flex items-center gap-2 pt-2">
-                    <Button asChild size="sm" className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
-                      <Link href={`/products/${product.id}`}>
-                        <Eye className="mr-1.5 h-3.5 w-3.5" />
+                    <Button asChild size="sm" className="flex-1 rounded-xl bg-primary text-primary-foreground shadow-md hover:bg-primary/90">
+                      <Link href={`/products/${product.id}`} className="flex items-center gap-2">
+                        <Eye className="h-3.5 w-3.5" />
                         {t.productsPage.viewDetails}
                       </Link>
                     </Button>
@@ -138,10 +138,10 @@ export default function ProductsPage() {
                       asChild
                       size="sm"
                       variant="outline"
-                      className="flex-1 border-gold text-gold hover:bg-gold hover:text-white"
+                      className="flex-1 rounded-xl border-gold text-gold shadow-md hover:bg-gold hover:text-white"
                     >
-                      <a href="/techsheet.pdf" download="CHINA-Trading-TechSheet.pdf">
-                        <FileDown className="mr-1.5 h-3.5 w-3.5" />
+                      <a href="/techsheet.pdf" download="CHINA-Trading-TechSheet.pdf" className="flex items-center gap-2">
+                        <FileDown className="h-3.5 w-3.5" />
                         {t.productsPage.downloadSheet}
                       </a>
                     </Button>
@@ -152,7 +152,7 @@ export default function ProductsPage() {
           </div>
 
           {filtered.length === 0 && (
-            <div className="py-20 text-center">
+            <div className="py-12 text-center sm:py-16 lg:py-20">
               <p className="text-lg text-muted-foreground">No products found matching your criteria.</p>
             </div>
           )}

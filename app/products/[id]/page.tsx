@@ -39,7 +39,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="bg-background pt-24 pb-16">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
         {/* Back button */}
         <Button asChild variant="ghost" className="mb-6 text-muted-foreground hover:text-foreground">
           <Link href="/products">
@@ -104,10 +104,10 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             <Button
               asChild
               size="lg"
-              className="mt-auto bg-gold text-white hover:bg-gold/90"
+              className="mt-auto flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-white shadow-lg hover:bg-gold/90"
             >
-              <a href="/techsheet.pdf" download="CHINA-Trading-TechSheet.pdf">
-                <FileDown className="mr-2 h-5 w-5" />
+              <a href="/techsheet.pdf" download="CHINA-Trading-TechSheet.pdf" className="flex items-center gap-2">
+                <FileDown className="h-5 w-5" />
                 {t.productsPage.downloadSheet}
               </a>
             </Button>

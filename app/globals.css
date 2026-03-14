@@ -3,79 +3,88 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ========== Variables base (siempre tema oscuro - rojo, blanco, dorado) ========== */
 :root {
-  --background: #f8f4ea;
-  --foreground: #143129;
-  --card: #FFFFFF;
-  --card-foreground: #143129;
-  --popover: #FFFFFF;
-  --popover-foreground: #143129;
-  --primary: #0f5c4d;
-  --primary-foreground: #FFFFFF;
-  --secondary: #f1e7d1;
-  --secondary-foreground: #143129;
-  --muted: #f4eddc;
-  --muted-foreground: #5f6f67;
-  --accent: #c79d47;
-  --accent-foreground: #1f1710;
-  --destructive: #DC2626;
-  --destructive-foreground: #FFFFFF;
-  --border: #e3d7bd;
-  --input: #e3d7bd;
-  --ring: #0f5c4d;
-  --chart-1: #0f5c4d;
-  --chart-2: #c79d47;
-  --chart-3: #11353a;
-  --chart-4: #6a8374;
-  --chart-5: #d8bc83;
-  --radius: 0.625rem;
-  --sidebar: #f8f4ea;
-  --sidebar-foreground: #143129;
-  --sidebar-primary: #0f5c4d;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #f1e7d1;
-  --sidebar-accent-foreground: #143129;
-  --sidebar-border: #e3d7bd;
-  --sidebar-ring: #0f5c4d;
-  --navy: #10353a;
-  --gold: #c79d47;
+  --navy-rgb: 5, 7, 12;
+  --background-rgb: 5, 7, 12;
+  --primary-rgb: 178, 31, 42;
+  --gold-rgb: 212, 164, 71;
+  --foreground-rgb: 247, 242, 231;
+  --background: #05070c;
+  --foreground: #f7f2e7;
+  --card: #0c0f18;
+  --card-foreground: #f7f2e7;
+  --popover: #0c0f18;
+  --popover-foreground: #f7f2e7;
+  --primary: #b21f2a;
+  --primary-foreground: #fdf5e3;
+  --secondary: #12161f;
+  --secondary-foreground: #f7f2e7;
+  --muted: #12161f;
+  --muted-foreground: #9ca3af;
+  --accent: #d4a447;
+  --accent-foreground: #1b140a;
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #b21f2a;
+  --sidebar: #05070c;
+  --sidebar-foreground: #f7f2e7;
+  --sidebar-primary: #b21f2a;
+  --sidebar-primary-foreground: #fdf5e3;
+  --sidebar-accent: #12161f;
+  --sidebar-accent-foreground: #f7f2e7;
+  --sidebar-border: #1f2937;
+  --sidebar-ring: #b21f2a;
+  --navy: #05070c;
+  --gold: #d4a447;
+  --hero-text: #ffffff;
+  --logo-global: #d4a447;
 }
 
+/* ========== TEMA CORPORATIVO (default): Negro predominante - estilo empresarial ========== */
 .dark {
-  --background: #061c1d;
+  --navy-rgb: 5, 7, 12;
+  --background-rgb: 5, 7, 12;
+  --primary-rgb: 178, 31, 42;
+  --gold-rgb: 212, 164, 71;
+  --foreground-rgb: 247, 242, 231;
+  --background: #05070c;
   --foreground: #f7f2e7;
-  --card: #0f2e2e;
+  --card: #0c0f18;
   --card-foreground: #f7f2e7;
-  --popover: #0f2e2e;
+  --popover: #0c0f18;
   --popover-foreground: #f7f2e7;
-  --primary: #4eaf97;
-  --primary-foreground: #FFFFFF;
-  --secondary: #123535;
+  --primary: #b21f2a;
+  --primary-foreground: #fdf5e3;
+  --secondary: #12161f;
   --secondary-foreground: #f7f2e7;
-  --muted: #123535;
-  --muted-foreground: #baa98c;
-  --accent: #d8bc83;
-  --accent-foreground: #1f1710;
+  --muted: #12161f;
+  --muted-foreground: #9ca3af;
+  --accent: #d4a447;
+  --accent-foreground: #1b140a;
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #b21f2a;
+  --sidebar: #05070c;
+  --sidebar-foreground: #f7f2e7;
+  --sidebar-primary: #b21f2a;
+  --sidebar-primary-foreground: #fdf5e3;
+  --sidebar-accent: #12161f;
+  --sidebar-accent-foreground: #f7f2e7;
+  --sidebar-border: #1f2937;
+  --sidebar-ring: #b21f2a;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: #214746;
-  --input: #214746;
-  --ring: #4eaf97;
-  --chart-1: #4eaf97;
-  --chart-2: #d8bc83;
+  --chart-1: #b21f2a;
+  --chart-2: #d4a447;
   --chart-3: #f7f2e7;
-  --chart-4: #8cb2a4;
-  --chart-5: #50786e;
-  --sidebar: #061c1d;
-  --sidebar-foreground: #f7f2e7;
-  --sidebar-primary: #4eaf97;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #123535;
-  --sidebar-accent-foreground: #f7f2e7;
-  --sidebar-border: #214746;
-  --sidebar-ring: #4eaf97;
-  --navy: #10353a;
-  --gold: #d8bc83;
+  --chart-4: #7d3a35;
+  --chart-5: #f0c978;
+  --radius: 0.5rem;
+  --navy: #05070c;
+  --gold: #d4a447;
+  --hero-text: #ffffff;
+  --logo-global: #d4a447;
 }
 
 @theme inline {
@@ -119,6 +128,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-navy: var(--navy);
   --color-gold: var(--gold);
+  --color-hero-text: var(--hero-text);
 }
 
 @layer base {
@@ -127,11 +137,167 @@
   }
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;
-    background-image:
-      radial-gradient(circle at top left, rgba(15, 92, 77, 0.08), transparent 28%),
-      radial-gradient(circle at bottom right, rgba(199, 157, 71, 0.08), transparent 24%);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
+  html.dark body,
+  body {
+    background: #05070c;
+    /* Capa 1-3: degradados suaves corporativos, capa 4: estrellas doradas, capa 5: velo oscuro */
+    background-image:
+      radial-gradient(ellipse 100% 60% at 50% -10%, rgba(var(--primary-rgb), 0.08), transparent 55%),
+      radial-gradient(ellipse 80% 50% at 100% 100%, rgba(var(--gold-rgb), 0.06), transparent 45%),
+      radial-gradient(ellipse 60% 80% at 0% 80%, rgba(var(--primary-rgb), 0.04), transparent 40%),
+      url("/brand/starry-field-bg.png"),
+      linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+    background-size: auto, auto, auto, cover, auto;
+    background-position: 0 0, 0 0, 0 0, center, 0 0;
+    background-attachment: scroll, scroll, scroll, fixed, scroll;
+    background-repeat: repeat, repeat, repeat, no-repeat, no-repeat;
+    transition: background-image 200ms ease-out;
+  }
+
+  body:hover {
+    /* En hover aligeramos un poco el velo oscuro para que el dorado respire */
+    background-image:
+      radial-gradient(ellipse 100% 60% at 50% -10%, rgba(var(--primary-rgb), 0.08), transparent 55%),
+      radial-gradient(ellipse 80% 50% at 100% 100%, rgba(var(--gold-rgb), 0.06), transparent 45%),
+      radial-gradient(ellipse 60% 80% at 0% 80%, rgba(var(--primary-rgb), 0.04), transparent 40%),
+      url("/brand/starry-field-bg.png"),
+      linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38));
+  }
+}
+
+/* Tipografía corporativa */
+.heading-display {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Sección estándar - espaciado profesional y responsive */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Animación suave para el botón RFQ - atrae la atención sin ser molesta */
+@keyframes rfq-attention {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
+
+.animate-rfq-attention {
+  animation: rfq-attention 2s ease-in-out infinite;
+}
+
+/* Divisor dorado entre secciones principales */
+.section-divider {
+  width: 100%;
+  max-width: 72rem; /* ~1150px */
+  height: 1px;
+  margin: 2rem auto;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--gold-rgb), 0),
+    rgba(var(--gold-rgb), 0.85),
+    rgba(var(--gold-rgb), 0)
+  );
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .section-divider {
+    margin: 3rem auto;
+  }
+}
+
+/* Fondo de estrellas/puntos en secciones clave */
+.trade-stars-bg {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),
+    url("/brand/starry-field-bg.png");
+  background-size: auto, cover;
+  background-position: 0 0, center;
+  background-attachment: scroll, local;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-image 200ms ease-out;
+}
+
+.trade-stars-bg:hover {
+  /* En hover, el dorado se nota un poco más (menos opacidad del velo) */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("/brand/starry-field-bg.png");
+}
+
+/* Fondos espaciales para secciones clave */
+.space-bg-main {
+  background-image: url("/brand/space-main-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.space-bg-nebula {
+  background-image: url("/brand/space-nebula-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.space-bg-stars {
+  background-image: url("/brand/space-stars-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
 }

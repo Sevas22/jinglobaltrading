@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: "Jibala Trading",
-  shortName: "Jibala",
-  tagline: "Middle East Trade & Supply",
+  name: "JIN Global Trading",
+  shortName: "JIN Global",
+  tagline: "Importaciones productivas y exportaciones para PYMES",
   description:
-    "Premium trading company specialized in sourcing, export coordination, private label programs, and logistics support for distributors, wholesalers, and retail buyers across the Middle East.",
-  url: "https://jibalatrading.com",
+    "Comercializadora internacional que integra importaciones productivas de maquinaria, insumos y tecnología con programas de exportación para PYMES y productores agroindustriales hacia Estados Unidos, Europa, Asia, Medio Oriente y Venezuela.",
+  url: "https://jinglobaltrading.com",
   contact: {
-    phone: "+971 4 555 0182",
-    email: "sales@jibalatrading.com",
-    addressLine1: "Dubai Trade Centre, Office 402",
-    addressLine2: "Dubai, United Arab Emirates",
+    phone: "+57 000 000 0000",
+    email: "info@jinglobaltrading.com",
+    addressLine1: "Oficina comercial",
+    addressLine2: "Latinoamérica",
   },
 } as const
