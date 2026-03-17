@@ -36,7 +36,13 @@ function Earth({ textureUrl }: { textureUrl: string }) {
   return (
     <mesh>
       <sphereGeometry args={[1, 64, 64]} />
-      <meshStandardMaterial map={texture} />
+      <meshStandardMaterial
+        map={texture}
+        emissiveMap={texture}
+        emissive="#5a6a7a"
+        emissiveIntensity={0.75}
+        color="#f4f6f9"
+      />
     </mesh>
   )
 }
@@ -85,9 +91,9 @@ function EarthGlobeInner({ textureUrl, hotspots, activeId, onSelect }: EarthGlob
   return (
     <>
       <color attach="background" args={["transparent"]} />
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 3, 5]} intensity={1.1} />
-      <directionalLight position={[-4, -2, -4]} intensity={0.4} />
+      <ambientLight intensity={1.25} />
+      <directionalLight position={[5, 3, 5]} intensity={2.2} />
+      <directionalLight position={[-4, -2, -4]} intensity={1} />
 
       <group>
         <Earth textureUrl={textureUrl} />

@@ -175,7 +175,7 @@ export const translations = {
       category: "Category",
     },
     requestPage: {
-      title: "Request Information",
+      title: "Quote Request",
       subtitle: "Share your import or export needs and our team will respond with availability, pricing and next steps.",
       fullName: "Full Name",
       email: "Email Address",
@@ -212,8 +212,8 @@ export const translations = {
       rights: "All rights reserved.",
       address: "Commercial office",
       city: "Latin America",
-      phone: "+57 000 000 0000",
-      email: "info@jinglobaltrading.com",
+      phone: "+573173145264",
+      email: "negocios@jinglobaltrading.com",
     },
     admin: {
       title: "Admin Panel",
@@ -418,7 +418,7 @@ export const translations = {
       category: "Categoría",
     },
     requestPage: {
-      title: "Solicitar Información",
+      title: "Solicitud de cotizaciones",
       subtitle: "Comparte tus necesidades de importación o exportación y nuestro equipo responderá con disponibilidad, precios y siguientes pasos.",
       fullName: "Nombre Completo",
       email: "Correo Electrónico",
@@ -455,8 +455,8 @@ export const translations = {
       rights: "Todos los derechos reservados.",
       address: "Oficina comercial",
       city: "Latinoamérica",
-      phone: "+57 000 000 0000",
-      email: "info@jinglobaltrading.com",
+      phone: "+573173145264",
+      email: "negocios@jinglobaltrading.com",
     },
     admin: {
       title: "Panel de Administración",

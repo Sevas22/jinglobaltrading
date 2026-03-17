@@ -43,7 +43,7 @@ export function VideoGallerySection() {
             Haz clic en cualquier video para reproducirlo.
           </p>
           <p className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            Videos de maquinaria
+            Tecnologías productivas
           </p>
         </div>
 

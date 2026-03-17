@@ -131,7 +131,7 @@ export default function StorePage() {
                 <CardContent className="flex flex-col gap-3 p-6">
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
-                    <span className="shrink-0 text-xl font-bold text-primary">
+                    <span className="shrink-0 text-xl font-bold text-white">
                       ${product.price.toFixed(2)}
                     </span>
                   </div>

@@ -32,8 +32,8 @@ export function HeroBanner({ title, subtitle, image, overlayVariant = "default" 
       <div
         className={`absolute inset-0 ${
           overlayVariant === "store"
-            ? "bg-gradient-to-r from-[#05070c]/95 via-[#05070c]/80 to-[#05070c]/40"
-            : "bg-gradient-to-r from-[#05070c]/90 via-[#05070c]/60 to-transparent"
+            ? "bg-gradient-to-r from-[#05070c]/75 via-[#05070c]/55 to-[#05070c]/25"
+            : "bg-gradient-to-r from-[#05070c]/65 via-[#05070c]/45 to-transparent"
         }`}
       />
       {overlayVariant === "store" && (
@@ -78,13 +78,12 @@ export function HeroBanner({ title, subtitle, image, overlayVariant = "default" 
 
               <div className="mb-5">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground/80">Mercados</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-4 gap-2">
                   {[
                     { code: "us", name: "Estados Unidos" },
                     { code: "eu", name: "Europa" },
                     { code: "cn", name: "China" },
                     { code: "sg", name: "Singapur" },
-                    { code: "eg", name: "Egipto" },
                     { code: "sa", name: "Arabia Saudita" },
                     { code: "tr", name: "Turquía" },
                     { code: "ve", name: "Venezuela" },

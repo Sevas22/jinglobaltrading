@@ -101,22 +101,27 @@ export function StatsSection() {
     return () => obs.disconnect()
   }, [])
 
-  const stat1 = useCountUp(8, "+", 2200, isVisible)
-  const stat2 = useCountUp(6, "", 2200, isVisible)
-  const stat3 = useCountUp(30, "+", 2200, isVisible)
-  const stat4 = useCountUp(24, "/7", 2200, isVisible)
+  const stat1 = useCountUp(120, "+", 2200, isVisible)
+  const stat2 = useCountUp(18, "", 2200, isVisible)
+  const stat3 = useCountUp(45, "+", 2200, isVisible)
+  const stat4 = useCountUp(95, "%", 2200, isVisible)
 
   const stats = [
-    { value: stat1, label: t.stats.years },
-    { value: stat2, label: t.stats.countries },
-    { value: stat3, label: t.stats.products },
-    { value: stat4, label: t.stats.response },
+    { value: stat1, label: "Operaciones gestionadas" },
+    { value: stat2, label: "Proveedores internacionales" },
+    { value: stat3, label: "Proyectos industriales" },
+    { value: stat4, label: "Clientes recurrentes" },
   ]
 
   return (
     <section ref={sectionRef} className="trade-stars-bg relative border-y border-white/5 bg-[#080b12] py-12 sm:py-16 lg:py-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(var(--gold-rgb),0.05),transparent_50%)]" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-5 lg:px-8">
+        <div className="mb-8 text-center sm:mb-10">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+            Mercados a los que llegamos
+          </h2>
+        </div>
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:gap-8 lg:gap-12">
           {stats.map((s, i) => (
             <div key={i} className="flex flex-col items-center text-center">
@@ -506,11 +511,9 @@ export function AboutSection() {
 const EXPORT_HOTSPOTS = [
   { id: "usa", label: "Estados Unidos", code: "USA", flagCode: "us", x: 22, y: 32, desc: "Exportamos alimentos y productos agroindustriales a Estados Unidos." },
   { id: "europa", label: "Europa", code: "EUR", flagCode: "eu", x: 48, y: 28, desc: "Mercado de exportación activo en la Unión Europea (Alemania, España, Francia y más)." },
-  { id: "asia", label: "Asia", code: "ASI", flagCode: "cn", x: 75, y: 42, desc: "Conectamos productos latinoamericanos con mercados asiáticos." },
   { id: "medio-oriente", label: "Medio Oriente", code: "MOR", flagCode: "sa", x: 58, y: 42, desc: "Exportaciones a Arabia Saudita, Emiratos y la región." },
   { id: "venezuela", label: "Venezuela", code: "VEN", flagCode: "ve", x: 28, y: 58, desc: "Mercado destino prioritario para exportaciones." },
   { id: "china", label: "China", code: "CHN", flagCode: "cn", x: 82, y: 32, desc: "Red de comercialización con importadores en China." },
-  { id: "colombia", label: "Colombia", code: "COL", flagCode: "co", x: 24, y: 50, desc: "Exportaciones y operaciones comerciales en Colombia." },
 ]
 
 /* Texturas de Tierra: estilo realista desde el espacio (océanos azules, nubes, atmósfera) */
@@ -596,7 +599,7 @@ export function ExportCountriesSection() {
             <div className="relative flex flex-col items-center gap-6 lg:flex-row lg:items-stretch">
               <div className="relative flex flex-1 items-center justify-center">
                 <div className="relative flex min-h-[240px] min-w-[240px] items-center justify-center sm:min-h-[280px] sm:min-w-[280px] md:min-h-[320px] md:min-w-[320px] lg:min-h-[380px] lg:min-w-[380px]">
-                  <div className="relative h-[220px] w-[220px] shrink-0 overflow-hidden rounded-full border border-gold/40 bg-[#020617] sm:h-[260px] sm:w-[260px] md:h-[300px] md:w-[300px] lg:h-[360px] lg:w-[360px]">
+                  <div className="relative h-[220px] w-[220px] shrink-0 overflow-hidden rounded-full border-2 border-gold/50 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,#1e3a5f_0%,#0f172a_40%,#020617_100%)] shadow-[inset_0_0_80px_rgba(30,58,95,0.4)] sm:h-[260px] sm:w-[260px] md:h-[300px] md:w-[300px] lg:h-[360px] lg:w-[360px]">
                     <EarthGlobe
                       textureUrl={textureError ? EARTH_TEXTURE_OPTIONS[1] : EARTH_TEXTURE_URL}
                       hotspots={EXPORT_HOTSPOTS.map(({ id, lat, lon }) => ({ id, lat, lon }))}
@@ -721,11 +724,9 @@ export function StrategicIntegratorSection() {
   const hotspots = [
     { id: "usa", label: "Estados Unidos", code: "USA", flagCode: "us", x: 22, y: 32, desc: "Red de distribución y proveedores en Estados Unidos." },
     { id: "europa", label: "Europa", code: "EUR", flagCode: "eu", x: 48, y: 28, desc: "Proveedores industriales y redes de distribución en la UE." },
-    { id: "asia", label: "Asia", code: "ASI", flagCode: "cn", x: 75, y: 42, desc: "Conexiones con proveedores y mercados asiáticos." },
     { id: "medio-oriente", label: "Medio Oriente", code: "MOR", flagCode: "sa", x: 58, y: 42, desc: "Red de distribución activa en la región." },
     { id: "venezuela", label: "Venezuela", code: "VEN", flagCode: "ve", x: 28, y: 58, desc: "Mercado destino y operaciones logísticas activas." },
     { id: "china", label: "China", code: "CHN", flagCode: "cn", x: 82, y: 32, desc: "Proveedores industriales y redes de comercio con China." },
-    { id: "colombia", label: "Colombia", code: "COL", flagCode: "co", x: 24, y: 50, desc: "Red de distribución y operaciones en Colombia." },
   ]
 
   const handleHotspotClick = (id: string) => {
@@ -1011,7 +1012,7 @@ export function QueHacemosSection() {
   const services = [
     {
       icon: Ship,
-      title: "Agentes de exportaciones / comerciales",
+      title: "Importaciones productivas",
       desc: "Ruta exportadora y fuerza de ventas internacional. Conectamos tu oferta con compradores en USA, Europa, Asia, Medio Oriente y Venezuela.",
       href: "/exportaciones",
     },
@@ -1038,7 +1039,7 @@ export function QueHacemosSection() {
             Qué hacemos
           </div>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Agentes de exportaciones e importaciones
+            Nuestros servicios
           </h2>
           <p className="mx-auto max-w-2xl text-white/70">
             Comercialización internacional y compras industriales. De principio a fin.
@@ -1062,13 +1063,16 @@ export function QueHacemosSection() {
               <h3 className="mb-3 text-center text-xl font-bold text-foreground md:text-2xl">{s.title}</h3>
               <p className="mb-5 flex-1 text-center text-sm leading-relaxed text-white/70 md:text-base">{s.desc}</p>
               <div className="flex justify-center">
-                <Link
-                  href={s.href}
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-gold underline-offset-2 transition-colors hover:text-gold/90"
+                <a
+                  href="https://wa.link/enpj7c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy shadow-md transition-all hover:bg-gold/90 hover:shadow-lg"
                 >
-                  Conoce más
+                  <MessageCircle className="h-4 w-4" />
+                  Habla con un asesor
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </div>
           ))}
@@ -1316,11 +1320,9 @@ export function CountriesSection() {
   const markets = [
     { name: "Estados Unidos", code: "USA", flagCode: "us" },
     { name: "Europa", code: "EUR", flagCode: "eu" },
-    { name: "Asia", code: "ASI", flagCode: "cn" },
     { name: "Medio Oriente", code: "MOR", flagCode: "sa" },
     { name: "Venezuela", code: "VEN", flagCode: "ve" },
     { name: "China", code: "CHN", flagCode: "cn" },
-    { name: "Colombia", code: "COL", flagCode: "co" },
   ]
 
   return (
@@ -1705,15 +1707,20 @@ export function ImportSection() {
               Maquinaria, bienes de capital, materias primas e insumos. Proveedores verificados. Logística y entrega en tu planta.
             </p>
             <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-primary/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                <Truck className="h-4 w-4" />
-                Maquinaria y carga de proyecto
-              </div>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-primary/30"
+                className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold transition-all hover:border-gold/60 hover:bg-gold/20"
+              >
+                <Truck className="h-4 w-4" />
+                Maquinaria y carga de proyecto
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-gold px-5 py-2.5 text-sm font-semibold text-navy shadow-lg shadow-gold/20 transition-all hover:scale-105 hover:bg-gold/90 hover:shadow-gold/30"
               >
                 <MessageCircle className="h-4 w-4" />
                 Cotizar mis importaciones
@@ -1745,7 +1752,7 @@ export function ImportSection() {
         </div>
 
         <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-          Videos de maquinaria
+          Tecnologías productivas
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {IMPORT_SECTION_VIDEOS.map((video, i) => (
@@ -2055,9 +2062,9 @@ const SECTOR_IMAGES: Record<string, string> = {
   agroMachinery: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=280&fit=crop&q=80",
   textiles: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=280&fit=crop&q=80",
   furniture: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=400&h=280&fit=crop&q=80",
-  leather: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=280&fit=crop&q=80",
-  plastics: "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=400&h=280&fit=crop&q=80",
-  metalmechanics: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=400&h=280&fit=crop&q=80",
+  leather: "/images/sectores/manufacturas-cuero.jpg",
+  plastics: "/images/sectores/productos-plasticos.jpg",
+  metalmechanics: "/images/sectores/metalmecanica-componentes.jpg",
   agriProducers: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&h=280&fit=crop&q=80",
   packaging: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=280&fit=crop&q=80",
   agroindustry: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=280&fit=crop&q=80",
@@ -2079,9 +2086,9 @@ function SectorCard({ sector }: { sector: { key: string; label: string } }) {
           onError={() => setImgSrc(fallback)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0c0f18] via-[#0c0f18]/40 to-transparent" />
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 p-4">
-        <span className="text-sm font-semibold text-white drop-shadow-lg">{sector.label}</span>
+        <div className="absolute inset-x-0 bottom-0 p-4 text-center">
+          <span className="block text-sm font-semibold text-white drop-shadow-lg">{sector.label}</span>
+        </div>
       </div>
     </div>
   )
@@ -2133,12 +2140,12 @@ export function QuienAtendemosSection({
               {isInternalLink ? (
                 <a href={scheduleUrl} className="flex items-center gap-2">
                   <CalendarCheck className="h-5 w-5" />
-                  {t.sectors.scheduleMeeting}
+                  Compra insumos a precios de proveedores internacionales
                 </a>
               ) : (
                 <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <CalendarCheck className="h-5 w-5" />
-                  {t.sectors.scheduleMeeting}
+                  Compra insumos a precios de proveedores internacionales
                 </a>
               )}
             </Button>
@@ -2240,10 +2247,10 @@ export function CasosExitoExportSection() {
             Casos de éxito
           </div>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Marcas a las que ayudamos a exportar
+            Marcas a las que ayudamos a exportar y a importar
           </h2>
           <p className="mx-auto max-w-2xl text-white/70">
-            Testimonios de empresas que expandieron sus ventas a mercados internacionales con nosotros.
+            Testimonios de empresas que fortalecieron su capacidad productiva con importaciones estructuradas.
           </p>
         </div>
 
@@ -2423,11 +2430,11 @@ export function CasosExitoImportSection() {
   )
 }
 
-/** Imágenes de la galería inferior de Exportaciones (misma estructura que Importaciones). */
-const EXPORT_SECTION_IMAGES = [
-  { src: "/images/jin/global-link-ship.png", alt: "Buque Global Link atracado en puerto con contenedores", caption: "Puertos y contenedores" },
-  { src: "/images/jin/global-network-sunset.png", alt: "Terminal de contenedores al atardecer con mapa de conexiones globales", caption: "Conexiones globales" },
-  { src: "/images/jin/port-aerial-2.png", alt: "Vista aérea de puerto y terminal de contenedores", caption: "Logística internacional" },
+/** Videos de la galería inferior de Exportaciones (YouTube embeds). */
+const EXPORT_SECTION_VIDEOS = [
+  { videoId: "bxz9mkAAcxs", caption: "Puertos y contenedores" },
+  { videoId: "xCvssgjZ_g0", caption: "Conexiones globales" },
+  { videoId: "o5bhz-8UEZY", caption: "Logística internacional" },
 ]
 
 export function ExportSection() {
@@ -2438,10 +2445,10 @@ export function ExportSection() {
           {/* Columna izquierda: contenido */}
           <div className="flex flex-col items-center text-center lg:items-start lg:justify-center lg:text-left">
             <div className="mb-3 inline-flex rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-gold">
-              Exportaciones internacionales
+              Exportaciones alimentos-bebidas-agrícolas-agroindustriales
             </div>
             <h2 className="mb-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Exportaciones internacionales
+              Exportaciones alimentos-bebidas-agrícolas-agroindustriales
             </h2>
             <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
               Ruta exportadora para tus productos. USA, Europa, Asia, Medio Oriente y Venezuela.
@@ -2489,15 +2496,19 @@ export function ExportSection() {
           Mercados y logística global
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {EXPORT_SECTION_IMAGES.map((img, i) => (
+          {EXPORT_SECTION_VIDEOS.map((video, i) => (
             <div key={i} className="overflow-hidden rounded-2xl border border-white/10 bg-[#0c0f18] shadow-xl">
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="h-64 w-full object-cover"
-              />
+              <div className="relative aspect-video w-full">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.videoId}?modestbranding=1&rel=0`}
+                  title={video.caption}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
               <p className="p-3 text-center text-sm text-muted-foreground">
-                {img.caption}
+                {video.caption}
               </p>
             </div>
           ))}

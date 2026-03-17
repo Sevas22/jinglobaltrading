@@ -4,9 +4,10 @@ import {
   ExportAgentServicesSection,
   ExportChinaTradingSection,
   QuienAtendemosSection,
+  AliadosSection,
+  TeamSection,
   CasosExitoExportSection,
 } from "@/components/home-sections"
-import { CalendlyInlineWidget } from "@/components/calendly-inline-widget"
 
 export const metadata = {
   title: "Exportaciones para PYMES | Ruta exportadora y fuerza de ventas global",
@@ -30,9 +31,11 @@ export default function ExportacionesPage() {
       <div className="section-divider" />
       <ExportChinaTradingSection />
       <div className="section-divider" />
-      <CalendlyInlineWidget />
+      <QuienAtendemosSection variant="exportaciones" />
       <div className="section-divider" />
-      <QuienAtendemosSection scheduleHref="#agendar" variant="exportaciones" />
+      <AliadosSection />
+      <div className="section-divider" />
+      <TeamSection />
       <div className="section-divider" />
       <CasosExitoExportSection />
     </>

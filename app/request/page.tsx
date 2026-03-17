@@ -126,7 +126,7 @@ function RequestPageContent() {
           <Card className="rounded-2xl border border-white/10 bg-[#0c0f18] shadow-2xl">
             <CardHeader className="pb-2">
               <div className="mb-3 inline-flex w-fit rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-gold">
-                Solicitud de información
+                Solicitud de cotizaciones
               </div>
               <CardTitle className="text-2xl text-foreground">{t.requestPage.title}</CardTitle>
               <CardDescription className="text-muted-foreground">

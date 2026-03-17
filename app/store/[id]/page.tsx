@@ -74,7 +74,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
 
             {/* Price */}
             <div className="mb-6 flex items-baseline gap-2">
-              <span className="text-4xl font-bold text-primary">${product.price.toFixed(2)}</span>
+              <span className="text-4xl font-bold text-white">${product.price.toFixed(2)}</span>
               <span className="text-sm text-muted-foreground">USD</span>
             </div>
 
@@ -134,7 +134,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
                 >
                   <Plus className="h-4 w-4" />
                 </Button>
-                <span className="ml-4 text-lg font-semibold text-primary">
+                <span className="ml-4 text-lg font-semibold text-white">
                   Total: ${(product.price * quantity).toFixed(2)}
                 </span>
               </div>
@@ -182,7 +182,7 @@ export default function StoreProductDetailPage({ params }: { params: Promise<{ i
                       <CardContent className="p-5">
                         <div className="flex items-start justify-between gap-2">
                           <h3 className="text-lg font-semibold text-foreground">{rp.name}</h3>
-                          <span className="shrink-0 text-lg font-bold text-primary">
+                          <span className="shrink-0 text-lg font-bold text-white">
                             ${rp.price.toFixed(2)}
                           </span>
                         </div>

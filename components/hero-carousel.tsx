@@ -61,12 +61,12 @@ export function HeroCarousel() {
             alt={slide.alt}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#05070c] via-[#05070c]/90 to-[#05070c]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05070c]/70 via-[#05070c]/50 to-[#05070c]/20" />
         </div>
       ))}
 
-      {/* Overlay: mapa mundial - estilo corporativo ALLWE */}
-      <div className="pointer-events-none absolute inset-0 z-[5] opacity-[0.12]">
+      {/* Overlay: mapa mundial - estilo corporativo */}
+      <div className="pointer-events-none absolute inset-0 z-[5] opacity-[0.08]">
         <div
           className="h-full w-full bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url(/brand/world-map-bg.svg)" }}
@@ -79,7 +79,7 @@ export function HeroCarousel() {
           <div className="grid items-end gap-8 pt-24 pb-20 sm:pt-28 sm:gap-10 md:pb-24 lg:grid-cols-[minmax(0,1.2fr)_380px] lg:pt-20 lg:pb-16">
             <div className="mx-auto w-full max-w-3xl text-center md:mx-0 md:text-left">
               <div className="mb-4 inline-flex rounded-full border border-gold/40 bg-gold/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold backdrop-blur-sm sm:mb-5 sm:px-4 sm:text-xs sm:tracking-[0.24em] md:inline-flex">
-                Nosotros · Import & Export Trading Company
+                Import & Export Trading Company
               </div>
 
               <h1
@@ -152,13 +152,12 @@ export function HeroCarousel() {
 
                 <div className="mb-5">
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground/80">Mercados</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-4 gap-2">
                     {[
                       { code: "us", name: "Estados Unidos" },
                       { code: "eu", name: "Europa" },
                       { code: "cn", name: "China" },
                       { code: "sg", name: "Singapur" },
-                      { code: "eg", name: "Egipto" },
                       { code: "sa", name: "Arabia Saudita" },
                       { code: "tr", name: "Turquía" },
                       { code: "ve", name: "Venezuela" },

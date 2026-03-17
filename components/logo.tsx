@@ -110,7 +110,7 @@ export function Logo({ showWordmark = true, inverted = false, lightText = false,
             lightText ? "text-white/95" : useHeroColors ? "text-hero-text/90" : "text-muted-foreground"
           }`}
         >
-          Red global de logística
+          Comercializadora internacional
         </span>
       ) : null}
     </div>

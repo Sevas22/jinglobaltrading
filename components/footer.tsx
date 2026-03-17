@@ -1,20 +1,34 @@
 "use client"
 
 import Link from "next/link"
-import { MapPin, Phone, Mail, Send } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { Logo } from "@/components/logo"
 import { siteConfig } from "@/lib/site-config"
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" className={className}>
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  )
+}
+
+const SOCIAL_LINKS = [
+  { href: "https://www.facebook.com/jinglobaltrading", Icon: Facebook, label: "Facebook" },
+  { href: "https://www.tiktok.com/@jinglobaltrading", Icon: TikTokIcon, label: "TikTok" },
+  { href: "https://www.instagram.com/jinglobaltrading", Icon: Instagram, label: "Instagram" },
+  { href: "mailto:negocios@jinglobaltrading.com", Icon: Mail, label: "Email" },
+  { href: "https://www.youtube.com/channel/UCFDU9hz2yzq1ysElh6VgnBw", Icon: Youtube, label: "YouTube" },
+]
 
 export function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="border-t border-white/5 bg-[#030508] text-foreground">
+    <footer className="border-t border-gold/30 bg-[#030508] text-foreground">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-16 lg:px-8 lg:py-20">
-        <div className="grid grid-cols-1 place-items-center gap-10 sm:gap-12 md:grid-cols-2 md:place-items-stretch lg:grid-cols-4 lg:gap-16">
+        <div className="grid grid-cols-1 place-items-center gap-10 divide-y divide-gold/30 sm:gap-12 md:grid-cols-2 md:place-items-stretch md:divide-y-0 md:divide-x md:divide-gold/30 lg:grid-cols-4 lg:gap-16">
           {/* Brand */}
           <div className="flex w-full max-w-sm flex-col items-center gap-5 text-center md:max-w-none md:items-start md:text-left">
             <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-90">
@@ -81,27 +95,49 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* Redes sociales */}
           <div className="flex w-full max-w-sm flex-col items-center gap-5 text-center md:max-w-none md:items-start md:text-left">
             <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
-              {t.footer.newsletter}
+              Redes sociales
             </h3>
-            <p className="text-sm text-white/70">{t.footer.newsletterDesc}</p>
-            <div className="flex w-full max-w-xs gap-2 md:max-w-none">
-              <Input
-                placeholder={t.footer.emailPlaceholder}
-                className="min-w-0 flex-1 rounded-lg border-white/10 bg-white/5 text-foreground placeholder:text-white/40 focus-visible:ring-gold/50"
-              />
-              <Button size="icon" className="h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 rounded-lg bg-gold text-navy hover:bg-gold/90">
-                <Send className="h-4 w-4" />
-              </Button>
+            <div className="grid grid-cols-3 gap-2 place-items-center md:place-items-start">
+              {SOCIAL_LINKS.slice(0, 3).map(({ href, Icon, label }) => {
+                const isMailto = href.startsWith("mailto:")
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    {...(!isMailto && { target: "_blank", rel: "noopener noreferrer" })}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/80 transition-colors hover:border-gold/40 hover:bg-gold/10 hover:text-gold"
+                    aria-label={label}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                )
+              })}
+              <div className="col-span-3 flex justify-center gap-2 md:justify-start">
+                {SOCIAL_LINKS.slice(3).map(({ href, Icon, label }) => {
+                  const isMailto = href.startsWith("mailto:")
+                  return (
+                    <a
+                      key={label}
+                      href={href}
+                      {...(!isMailto && { target: "_blank", rel: "noopener noreferrer" })}
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/80 transition-colors hover:border-gold/40 hover:bg-gold/10 hover:text-gold"
+                      aria-label={label}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:mt-12 sm:pt-10 md:flex-row lg:mt-16 lg:pt-10">
-          <div className="flex flex-col items-center gap-1 md:items-start">
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 border-t border-gold/30 pt-8 text-center sm:mt-12 sm:pt-10 md:flex-row md:gap-8 lg:mt-16 lg:pt-10">
+          <div className="flex flex-col items-center gap-1">
             <p className="text-sm text-white/60">
               &copy; {new Date().getFullYear()} {siteConfig.name}. {t.footer.rights}
             </p>
@@ -116,11 +152,6 @@ export function Footer() {
                 codifikai.com
               </a>
             </p>
-          </div>
-          <div className="flex justify-center gap-4 md:justify-end">
-            <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-white/60 hover:text-gold transition-colors">
-              {siteConfig.contact.email}
-            </a>
           </div>
         </div>
       </div>

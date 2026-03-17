@@ -2,7 +2,6 @@
 
 import { HeroCarousel } from "@/components/hero-carousel"
 import {
-  StatsSection,
   QuienesSomosSection,
   QueHacemosSection,
   ExportCountriesSection,
@@ -28,10 +27,6 @@ export default function HomePage() {
       <ExportCountriesSection />
       <div className="section-divider" />
 
-      {/* 4. Métricas clave - con animación count-up */}
-      <StatsSection />
-      <div className="section-divider" />
-
       {/* 5. Qué hacemos */}
       <QueHacemosSection />
       <div className="section-divider" />
@@ -44,13 +39,13 @@ export default function HomePage() {
       <AliadosSection />
       <div className="section-divider" />
 
+      {/* 8. Nuestro equipo */}
+      <TeamSection />
+      <div className="section-divider" />
+
       {/* 9. Nuestras ventajas competitivas */}
       <VentajasCompetitivasSection />
       <MecanismosEspecialesSection />
-      <div className="section-divider" />
-
-      {/* 10. Nuestro equipo */}
-      <TeamSection />
       <div className="section-divider" />
 
       {/* 13. Casos de éxito */}
