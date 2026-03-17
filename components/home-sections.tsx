@@ -49,7 +49,7 @@ import dynamic from "next/dynamic"
 import { useLanguage } from "@/contexts/language-context"
 import { siteConfig } from "@/lib/site-config"
 
-const EarthGlobe = dynamic(() => import("@/components/earth-globe").then((m) => ({ default: m.EarthGlobe })), {
+const ExportGlobeSection = dynamic(() => import("@/components/sections/export-globe-wrapper").then((m) => ({ default: m.ExportGlobeSection })), {
   ssr: false,
   loading: () => (
     <div className="flex h-full w-full items-center justify-center rounded-full bg-[#0a0f1a]">
@@ -509,32 +509,16 @@ export function AboutSection() {
 }
 
 const EXPORT_HOTSPOTS = [
-  { id: "usa", label: "Estados Unidos", code: "USA", flagCode: "us", x: 22, y: 32, desc: "Exportamos alimentos y productos agroindustriales a Estados Unidos." },
-  { id: "europa", label: "Europa", code: "EUR", flagCode: "eu", x: 48, y: 28, desc: "Mercado de exportación activo en la Unión Europea (Alemania, España, Francia y más)." },
-  { id: "medio-oriente", label: "Medio Oriente", code: "MOR", flagCode: "sa", x: 58, y: 42, desc: "Exportaciones a Arabia Saudita, Emiratos y la región." },
-  { id: "venezuela", label: "Venezuela", code: "VEN", flagCode: "ve", x: 28, y: 58, desc: "Mercado destino prioritario para exportaciones." },
-  { id: "china", label: "China", code: "CHN", flagCode: "cn", x: 82, y: 32, desc: "Red de comercialización con importadores en China." },
-]
-
-/* Texturas de Tierra: estilo realista desde el espacio (océanos azules, nubes, atmósfera) */
-const EARTH_TEXTURE_OPTIONS = [
-  "/images/jin/earth-texture.jpg",
-  "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg",
+  { id: "europa", label: "Europa", code: "EUR", flagCode: "eu", lat: 50, lon: 10, desc: "Exportamos desde Colombia hacia la Unión Europea (Alemania, España, Francia y más)." },
+  { id: "usa", label: "Estados Unidos", code: "USA", flagCode: "us", lat: 39, lon: -98, desc: "Exportamos desde Colombia hacia Estados Unidos. Alimentos y productos agroindustriales." },
+  { id: "japon", label: "Japón", code: "JPN", flagCode: "jp", lat: 36, lon: 138, desc: "Exportamos desde Colombia hacia Japón. Red de comercialización activa." },
+  { id: "china", label: "China", code: "CHN", flagCode: "cn", lat: 35, lon: 105, desc: "Exportamos desde Colombia hacia China. Importadores y distribuidores verificados." },
+  { id: "canada", label: "Canadá", code: "CAN", flagCode: "ca", lat: 56, lon: -106, desc: "Exportamos desde Colombia hacia Canadá. Mercado de exportación en crecimiento." },
 ]
 
 export function ExportCountriesSection() {
-  const [selectedRegion, setSelectedRegion] = useState<string | null>(null)
-  const [textureIndex, setTextureIndex] = useState(0)
-  const [textureError, setTextureError] = useState(false)
-  const EARTH_TEXTURE_URL = EARTH_TEXTURE_OPTIONS[textureIndex]
-
-  const handleTextureError = () => {
-    if (textureIndex < EARTH_TEXTURE_OPTIONS.length - 1) {
-      setTextureIndex((i) => i + 1)
-    } else {
-      setTextureError(true)
-    }
-  }
+  const [selectedRegion, setSelectedRegion] = useState<string | null>("europa")
+  const globeRef = useRef<{ centerOnColombia: () => void } | null>(null)
 
   const handleHotspotClick = (id: string) => {
     const newSelected = selectedRegion === id ? null : id
@@ -593,27 +577,62 @@ export function ExportCountriesSection() {
           </p>
         </div>
 
-        {/* Planeta Tierra interactivo */}
-        <div className="relative mx-auto mb-14 max-w-5xl">
-          <div className="overflow-hidden rounded-3xl border-2 border-gold/40 bg-card/95 p-6 shadow-[0_0_60px_-15px_rgba(var(--gold-rgb),0.15),0_0_40px_-10px_rgba(var(--primary-rgb),0.1)] backdrop-blur-md md:p-10">
-            <div className="relative flex flex-col items-center gap-6 lg:flex-row lg:items-stretch">
-              <div className="relative flex flex-1 items-center justify-center">
-                <div className="relative flex min-h-[240px] min-w-[240px] items-center justify-center sm:min-h-[280px] sm:min-w-[280px] md:min-h-[320px] md:min-w-[320px] lg:min-h-[380px] lg:min-w-[380px]">
-                  <div className="relative h-[220px] w-[220px] shrink-0 overflow-hidden rounded-full border-2 border-gold/50 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,#1e3a5f_0%,#0f172a_40%,#020617_100%)] shadow-[inset_0_0_80px_rgba(30,58,95,0.4)] sm:h-[260px] sm:w-[260px] md:h-[300px] md:w-[300px] lg:h-[360px] lg:w-[360px]">
-                    <EarthGlobe
-                      textureUrl={textureError ? EARTH_TEXTURE_OPTIONS[1] : EARTH_TEXTURE_URL}
-                      hotspots={EXPORT_HOTSPOTS.map(({ id, lat, lon }) => ({ id, lat, lon }))}
-                      activeId={activeHotspot}
-                      focusId={selectedRegion}
-                      onSelect={(id) => handleHotspotClick(id)}
-                    />
-                  </div>
-                </div>
+        {/* Planeta Tierra interactivo con rutas punteadas (react-globe.gl) */}
+        <div className="relative mx-auto mb-14 max-w-7xl">
+          <div className="overflow-hidden rounded-[1.5rem] border-2 border-gold/40 bg-card/95 p-6 shadow-[0_0_60px_-15px_rgba(var(--gold-rgb),0.15),0_0_40px_-10px_rgba(var(--primary-rgb),0.1)] backdrop-blur-md md:p-10">
+            <div className="relative flex flex-col items-center gap-6">
+              {/* Planeta centrado arriba - ocupa todo el ancho */}
+              <div className="relative w-full min-h-[360px] sm:min-h-[420px] md:min-h-[450px]">
+                <ExportGlobeSection
+                  ref={globeRef}
+                  destinations={EXPORT_HOTSPOTS}
+                  selectedId={activeHotspot}
+                  onSelect={handleHotspotClick}
+                />
               </div>
 
-              <div className="flex w-full min-w-0 flex-col lg:w-80">
+              {/* Banderas y cajón debajo del planeta */}
+              <div className="flex w-full max-w-4xl flex-col items-center gap-4">
+                {/* Banderas */}
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 md:gap-x-5 md:gap-y-4">
+                  {EXPORT_HOTSPOTS.map((h) => (
+                    <button
+                      key={h.id}
+                      type="button"
+                      onClick={() => handleHotspotClick(h.id)}
+                      className={`flex items-center gap-2 rounded-full border-2 px-4 py-2.5 text-sm font-bold shadow-lg backdrop-blur-sm transition-transform duration-200 hover:scale-[1.03] ${
+                        selectedRegion === h.id
+                          ? "border-gold bg-primary/25 text-foreground shadow-gold/20"
+                          : "border-gold/50 bg-card/80 text-foreground hover:border-gold hover:bg-primary/10"
+                      }`}
+                    >
+                      <img
+                        src={`https://flagcdn.com/w40/${h.flagCode}.png`}
+                        alt=""
+                        className="h-5 w-7 rounded-sm object-cover"
+                      />
+                      <span>{h.label}</span>
+                    </button>
+                  ))}
+                </div>
+                {/* Cajón (ficha de detalle) */}
                 {activeInfo ? (
-                  <div className="rounded-2xl border-2 border-gold/40 bg-card/95 p-6 shadow-xl backdrop-blur-md transition-all">
+                  <div className="w-full max-w-2xl rounded-2xl border-2 border-gold/40 bg-card/95 p-6 shadow-xl backdrop-blur-md transition-all">
+                    <div className="mb-2 flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-2">
+                      <img
+                        src="https://flagcdn.com/w40/co.png"
+                        alt="Colombia"
+                        className="h-5 w-7 rounded object-cover"
+                      />
+                      <span className="text-xs font-semibold text-gold">Desde Colombia</span>
+                      <span className="text-muted-foreground">→</span>
+                      <img
+                        src={`https://flagcdn.com/w40/${activeInfo.flagCode}.png`}
+                        alt=""
+                        className="h-5 w-7 rounded object-cover"
+                      />
+                      <span className="text-xs font-semibold text-foreground">hacia {activeInfo.label}</span>
+                    </div>
                     <div className="mb-3 flex items-center gap-3">
                       <img
                         src={`https://flagcdn.com/w80/${activeInfo.flagCode}.png`}
@@ -635,33 +654,21 @@ export function ExportCountriesSection() {
                     )}
                   </div>
                 ) : (
-                  <div className="flex h-full min-h-[200px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-gold/40 bg-card/60 p-8 text-center">
-                    <Globe className="mb-3 h-12 w-12 text-gold/60" />
-                    <p className="text-sm font-medium text-muted-foreground">Pasa el cursor o haz clic en un punto</p>
-                    <p className="mt-1 text-xs text-muted-foreground/80">para ver los países a los que exportamos</p>
+                  <div className="flex w-full max-w-2xl min-h-[120px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-gold/40 bg-card/60 p-6 text-center">
+                    <Globe className="mb-2 h-10 w-10 text-gold/60" />
+                    <p className="text-sm font-medium text-muted-foreground">Selecciona un país para ver las rutas desde Colombia</p>
                   </div>
                 )}
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 md:justify-start md:gap-x-5 md:gap-y-4">
-                  {EXPORT_HOTSPOTS.map((h) => (
-                    <button
-                      key={h.id}
-                      type="button"
-                      onClick={() => handleHotspotClick(h.id)}
-                      className={`flex items-center gap-2 rounded-full border-2 px-4 py-2.5 text-sm font-bold shadow-lg backdrop-blur-sm transition-transform duration-200 hover:scale-[1.03] ${
-                        selectedRegion === h.id
-                          ? "border-gold bg-primary/25 text-foreground shadow-gold/20"
-                          : "border-gold/50 bg-card/80 text-foreground hover:border-gold hover:bg-primary/10"
-                      }`}
-                    >
-                      <img
-                        src={`https://flagcdn.com/w40/${h.flagCode}.png`}
-                        alt=""
-                        className="h-5 w-7 rounded-sm object-cover"
-                      />
-                      <span>{h.label}</span>
-                    </button>
-                  ))}
-                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => globeRef.current?.centerOnColombia()}
+                  className="border-gold/50 text-gold hover:bg-gold/10"
+                >
+                  <Globe className="mr-2 h-4 w-4" />
+                  Centrar en Colombia
+                </Button>
               </div>
             </div>
           </div>

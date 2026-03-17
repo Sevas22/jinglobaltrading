@@ -8,7 +8,7 @@ export const translations = {
       admin: "Admin",
     },
     hero: {
-      slide1Title: "We are an Import & Export Trading Company",
+      slide1Title: "Import & Export Trading Company",
       slide1Sub: "Connecting global markets. Export and import agents for SMEs and industries.",
       slide2Title: "Export and industrial purchasing agents",
       slide2Sub: "Export route and international sales force. Machinery and raw materials imports.",
@@ -251,7 +251,7 @@ export const translations = {
       admin: "Admin",
     },
     hero: {
-      slide1Title: "Somos una Import & Export Trading Company",
+      slide1Title: "Import & Export Trading Company",
       slide1Sub: "Conectamos mercados globales. Agentes de exportaciones e importaciones para PYMES e industrias.",
       slide2Title: "Agentes de exportaciones y compras industriales",
       slide2Sub: "Ruta exportadora y fuerza de ventas internacional. Importación de maquinaria y materias primas.",
