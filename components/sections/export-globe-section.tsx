@@ -66,13 +66,13 @@ export const ExportGlobeSection = forwardRef<ExportGlobeSectionRef, ExportGlobeS
     })),
   ]
 
-  /** Todas las líneas punteadas: desde cada país hacia Colombia */
+  /** Líneas de exportación: desde Colombia hacia cada país destino */
   const arcsData = destinations.map((d) => ({
-    startLat: d.lat,
-    startLng: d.lon,
-    endLat: ORIGIN.lat,
-    endLng: ORIGIN.lng,
-    color: d.id === selectedId ? ["#f59e0b", "#22c55e"] : ["#eab308", "#22c55e"],
+    startLat: ORIGIN.lat,
+    startLng: ORIGIN.lng,
+    endLat: d.lat,
+    endLng: d.lon,
+    color: d.id === selectedId ? ["#22c55e", "#f59e0b"] : ["#22c55e", "#eab308"],
   }))
 
   /** Etiquetas con nombres de países en el globo */
@@ -128,7 +128,7 @@ export const ExportGlobeSection = forwardRef<ExportGlobeSectionRef, ExportGlobeS
         arcAltitudeAutoScale={0.5}
         arcDashLength={0.08}
         arcDashGap={0.08}
-        arcDashAnimateTime={2500}
+        arcDashAnimateTime={2000}
         labelsData={labelsData}
         labelLat="lat"
         labelLng="lng"

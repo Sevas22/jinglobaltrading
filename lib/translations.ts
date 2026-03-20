@@ -115,10 +115,17 @@ export const translations = {
     },
     team: {
       title: "Our Team",
-      memberName: "William Gonzalez",
-      memberRole: "General Manager",
-      memberDesc: "We facilitate the connection of SMEs with global markets through the import of machinery, inputs and technology, and the export of food and agro-industrial products.",
       cta: "Meet our international support team",
+      william: {
+        name: "William Gonzalez",
+        role: "General Manager",
+        desc: "We facilitate the connection of SMEs with global markets through the import of machinery, inputs and technology, and the export of food and agro-industrial products.",
+      },
+      victor: {
+        name: "Victor Giron",
+        role: "Commercial Director",
+        desc: "Specialist in international trade and connecting companies with global markets. Experience in structuring import and export operations.",
+      },
     },
     cta: {
       title: "Comienza tu expansión internacional",
@@ -358,10 +365,17 @@ export const translations = {
     },
     team: {
       title: "Nuestro Equipo",
-      memberName: "William Gonzalez",
-      memberRole: "Gerente General",
-      memberDesc: "Facilitamos la conexión de pymes con mercados globales mediante la importación de maquinaria, insumos y tecnología, y la exportación de alimentos y productos agroindustriales.",
       cta: "Conoce a tu equipo internacional de apoyo",
+      william: {
+        name: "William Gonzalez",
+        role: "Gerente General",
+        desc: "Facilitamos la conexión de pymes con mercados globales mediante la importación de maquinaria, insumos y tecnología, y la exportación de alimentos y productos agroindustriales.",
+      },
+      victor: {
+        name: "Victor Giron",
+        role: "Director Comercial",
+        desc: "Especialista en comercio internacional y conexión de empresas con mercados globales. Experiencia en estructuración de operaciones de importación y exportación.",
+      },
     },
     cta: {
       title: "Comienza tu expansión internacional",

@@ -1180,19 +1180,32 @@ export function CategoriesSection() {
   )
 }
 
+const TEAM_MEMBERS = [
+  {
+    id: "william",
+    image: "/images/team/william-gonzalez.png",
+    socialLinks: [
+      { icon: Facebook, href: "#", label: "Facebook" },
+      { icon: Instagram, href: "#", label: "Instagram" },
+      { icon: Linkedin, href: "#", label: "LinkedIn" },
+    ],
+  },
+  {
+    id: "victor",
+    image: "/images/team/victor-giron.png",
+    socialLinks: [
+      { icon: Linkedin, href: "https://www.linkedin.com/in/victor-giron-mercaderus-trading", label: "LinkedIn" },
+    ],
+  },
+] as const
+
 export function TeamSection() {
   const { t } = useLanguage()
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-  ]
 
   return (
     <section className="trade-stars-bg relative overflow-hidden bg-[#05070c] py-12 sm:py-16 lg:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(var(--gold-rgb),0.06),transparent_50%)]" />
-      <div className="relative mx-auto max-w-4xl px-4 sm:px-5 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-5 lg:px-8">
         <div className="mb-12 text-center">
           <div className="mb-4 inline-flex rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-gold">
             Nuestro equipo
@@ -1207,39 +1220,51 @@ export function TeamSection() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0c0f18] shadow-xl">
-          <div className="flex flex-col items-center p-8 text-center md:p-12">
-            <div className="mb-6 flex h-32 w-32 overflow-hidden rounded-full border-4 border-gold/30 bg-muted shadow-lg ring-2 ring-primary/10">
-              <img
-                src="/images/team/william-gonzalez.png"
-                alt={t.team.memberName}
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = "/images/team/avatar-placeholder.svg"
-                  e.currentTarget.onerror = null
-                }}
-              />
-            </div>
-            <h3 className="mb-1 text-xl font-bold uppercase tracking-wider text-gold">{t.team.memberName}</h3>
-            <p className="mb-5 text-sm text-white/70">{t.team.memberRole}</p>
-            <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/80">
-              {t.team.memberDesc}
-            </p>
-            <div className="mb-8 flex gap-4">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-gold/30 hover:bg-gold/10 hover:text-gold"
-                  aria-label={s.label}
-                >
-                  <s.icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="grid gap-8 md:grid-cols-2">
+          {TEAM_MEMBERS.map((member) => {
+            const info = t.team[member.id as keyof typeof t.team]
+            if (typeof info !== "object" || !("name" in info)) return null
+            const { name, role, desc } = info as { name: string; role: string; desc: string }
+            return (
+              <div
+                key={member.id}
+                className="overflow-hidden rounded-2xl border border-white/10 bg-[#0c0f18] shadow-xl"
+              >
+                <div className="flex flex-col items-center p-8 text-center md:p-12">
+                  <div className="mb-6 flex h-32 w-32 overflow-hidden rounded-full border-4 border-gold/30 bg-muted shadow-lg ring-2 ring-primary/10">
+                    <img
+                      src={member.image}
+                      alt={name}
+                      className="h-full w-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "/images/team/avatar-placeholder.svg"
+                        e.currentTarget.onerror = null
+                      }}
+                    />
+                  </div>
+                  <h3 className="mb-1 text-xl font-bold uppercase tracking-wider text-gold">{name}</h3>
+                  <p className="mb-5 text-sm text-white/70">{role}</p>
+                  <p className="mb-6 max-w-2xl text-sm leading-relaxed text-white/80">
+                    {desc}
+                  </p>
+                  <div className="flex gap-4">
+                    {member.socialLinks.map((s) => (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-gold/30 hover:bg-gold/10 hover:text-gold"
+                        aria-label={s.label}
+                      >
+                        <s.icon className="h-5 w-5" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
 
         <div className="mt-8 flex justify-center">
