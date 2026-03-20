@@ -564,12 +564,12 @@ export function ExportCountriesSection() {
         <div className="mb-12 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/50 bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-gold">
             <Globe className="h-4 w-4" />
-            Mercados de exportación
+            Mercados de importación
           </div>
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-            Países a los que{" "}
+            Países desde los que{" "}
             <span className="bg-gradient-to-r from-gold via-gold to-primary bg-clip-text text-transparent">
-              exportamos
+              importamos
             </span>
           </h2>
           <p className="mt-4 text-sm text-muted-foreground">

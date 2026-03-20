@@ -66,13 +66,13 @@ export const ExportGlobeSection = forwardRef<ExportGlobeSectionRef, ExportGlobeS
     })),
   ]
 
-  /** Líneas de exportación: desde Colombia hacia cada país destino */
+  /** Importaciones: líneas desde cada país origen hacia Colombia (flechas hacia Colombia) */
   const arcsData = destinations.map((d) => ({
-    startLat: ORIGIN.lat,
-    startLng: ORIGIN.lng,
-    endLat: d.lat,
-    endLng: d.lon,
-    color: d.id === selectedId ? ["#22c55e", "#f59e0b"] : ["#22c55e", "#eab308"],
+    startLat: d.lat,
+    startLng: d.lon,
+    endLat: ORIGIN.lat,
+    endLng: ORIGIN.lng,
+    color: d.id === selectedId ? ["#f59e0b", "#22c55e"] : ["#eab308", "#22c55e"],
   }))
 
   /** Etiquetas con nombres de países en el globo */
