@@ -14,7 +14,7 @@ export const translations = {
       slide2Sub: "Export route and international sales force. Machinery and raw materials imports.",
       slide3Title: "Customs and financial structuring",
       slide3Sub: "International financial mechanisms for foreign trade. Operational and institutional allies at origin and destination.",
-      cta: "Explore solutions",
+      cta: "International commercialization",
       ctaSecondary: "Request diagnosis",
     },
     values: {
@@ -264,7 +264,7 @@ export const translations = {
       slide2Sub: "Ruta exportadora y fuerza de ventas internacional. Importación de maquinaria y materias primas.",
       slide3Title: "Estructuración aduanera y financiera",
       slide3Sub: "Mecanismos financieros internacionales para comercio exterior. Aliados operacionales e institucionales en origen y destino.",
-      cta: "Explorar soluciones",
+      cta: "Comercialización internacional",
       ctaSecondary: "Solicitar diagnóstico",
     },
     values: {

@@ -1019,13 +1019,13 @@ export function QueHacemosSection() {
   const services = [
     {
       icon: Ship,
-      title: "Importaciones productivas",
+      title: "Exportaciones productivas",
       desc: "Ruta exportadora y fuerza de ventas internacional. Conectamos tu oferta con compradores en USA, Europa, Asia, Medio Oriente y Venezuela.",
       href: "/exportaciones",
     },
     {
       icon: Truck,
-      title: "Agentes de importaciones / compras industriales",
+      title: "Agentes de importaciones",
       desc: "Adquisición de maquinaria, bienes de capital, materias primas e insumos industriales. Proveedores verificados, logística hasta tu planta.",
       href: "/importaciones",
     },
@@ -2021,7 +2021,7 @@ export function ExportAgentServicesSection() {
 
         <div className="mt-12 flex flex-col items-center gap-2 text-center text-xs text-white/60">
           <span className="font-semibold uppercase tracking-[0.22em] text-gold">
-            Enfocado en los segmentos agroindustrial y bebidas
+            Enfocado en los segmentos: agroindustrial, alimentos y bebidas
           </span>
           <span>Productores y marcas con potencial exportador que buscan un socio especializado en su categoría.</span>
         </div>
@@ -2144,10 +2144,13 @@ const SECTORS_EXPORTACIONES = ["food", "agroindustry", "agriProducers"] as const
 export function QuienAtendemosSection({
   scheduleHref,
   variant,
+  /** Solo en `/exportaciones`: CTA "Agenda tu diagnóstico exportador". En inicio con la misma variante se mantiene "Descubre tu potencial internacional". */
+  agendaDiagnosticoExportador,
 }: {
   scheduleHref?: string
   /** Solo en página Exportaciones: título "Comercialización internacional..." y 3 sectores */
   variant?: "exportaciones"
+  agendaDiagnosticoExportador?: boolean
 }) {
   const { t } = useLanguage()
   const scheduleUrl = scheduleHref ?? WHATSAPP_URL
@@ -2156,6 +2159,11 @@ export function QuienAtendemosSection({
   const sectorKeys = isExportaciones ? SECTORS_EXPORTACIONES : SECTORS_FULL
   const sectors = sectorKeys.map((key) => ({ key, label: t.sectors[key] }))
   const sectionTitle = isExportaciones ? t.sectors.titleExportaciones : t.sectors.title
+  const topCtaLabel = isExportaciones
+    ? agendaDiagnosticoExportador
+      ? "Agenda tu diagnóstico exportador"
+      : "Descubre tu potencial internacional"
+    : "Compra insumos a precios de proveedores internacionales"
 
   return (
     <section className="trade-stars-bg relative overflow-hidden bg-[#080b12] py-12 sm:py-16 lg:py-24">
@@ -2172,12 +2180,12 @@ export function QuienAtendemosSection({
               {isInternalLink ? (
                 <a href={scheduleUrl} className="flex items-center gap-2">
                   <CalendarCheck className="h-5 w-5" />
-                  Compra insumos a precios de proveedores internacionales
+                  {topCtaLabel}
                 </a>
               ) : (
                 <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <CalendarCheck className="h-5 w-5" />
-                  Compra insumos a precios de proveedores internacionales
+                  {topCtaLabel}
                 </a>
               )}
             </Button>
@@ -2344,10 +2352,15 @@ export function CasosExitoExportSection() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <Link href="/exportaciones" className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-gold/90">
-            Ver exportaciones
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-3 text-sm font-bold uppercase tracking-[0.15em] text-navy shadow-lg transition-colors hover:bg-gold/90"
+          >
+            Contáctenos
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

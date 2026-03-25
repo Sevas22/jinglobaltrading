@@ -59,7 +59,7 @@ export function HeroBanner({ title, subtitle, image, overlayVariant = "default" 
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 backdrop-blur-sm">
                 <Sparkles className="h-4 w-4 text-gold" />
-                Exportaciones internacionales
+                Comercialización internacional
               </div>
             </div>
           </div>

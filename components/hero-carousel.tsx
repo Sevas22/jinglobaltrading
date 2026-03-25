@@ -31,7 +31,7 @@ export function HeroCarousel() {
   const highlights = [
     { icon: CircleCheckBig, label: "USA · Europa · Asia" },
     { icon: PackageCheck, label: "Importaciones productivas" },
-    { icon: ShieldCheck, label: "Exportaciones internacionales" },
+    { icon: ShieldCheck, label: "Comercialización internacional" },
   ]
 
   const next = useCallback(() => {

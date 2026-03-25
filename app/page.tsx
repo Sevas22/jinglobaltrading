@@ -19,13 +19,8 @@ export default function HomePage() {
     <>
       {/* 1. BANNER: Nosotros - Import & Export Trading Company */}
       <HeroCarousel />
-      <div className="section-divider" />
 
-      {/* 2. Quienes somos - Tu socio estratégico */}
-      <QuienesSomosSection />
-      <div className="section-divider" />
-
-      {/* Botón CTA entre secciones - WhatsApp */}
+      {/* CTA WhatsApp justo después del banner */}
       <div className="relative flex justify-center bg-[#05070c] py-8 sm:py-10">
         <Button
           asChild
@@ -45,6 +40,10 @@ export default function HomePage() {
       </div>
       <div className="section-divider" />
 
+      {/* 2. Quienes somos - Tu socio estratégico */}
+      <QuienesSomosSection />
+      <div className="section-divider" />
+
       {/* 3. Países de exportación - globo interactivo */}
       <ExportCountriesSection />
       <div className="section-divider" />
@@ -61,12 +60,12 @@ export default function HomePage() {
       <QuienAtendemosSection variant="exportaciones" />
       <div className="section-divider" />
 
-      {/* 7. Nuestros aliados */}
-      <AliadosSection />
+      {/* 7. Nuestro equipo */}
+      <TeamSection />
       <div className="section-divider" />
 
-      {/* 8. Nuestro equipo */}
-      <TeamSection />
+      {/* 8. Red global de socios */}
+      <AliadosSection />
       <div className="section-divider" />
 
       {/* 9. Nuestras ventajas competitivas */}

@@ -31,11 +31,11 @@ export default function ExportacionesPage() {
       <div className="section-divider" />
       <ExportChinaTradingSection />
       <div className="section-divider" />
-      <QuienAtendemosSection variant="exportaciones" />
-      <div className="section-divider" />
-      <AliadosSection />
+      <QuienAtendemosSection variant="exportaciones" agendaDiagnosticoExportador />
       <div className="section-divider" />
       <TeamSection />
+      <div className="section-divider" />
+      <AliadosSection />
       <div className="section-divider" />
       <CasosExitoExportSection />
     </>
